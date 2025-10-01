@@ -54,51 +54,75 @@ export function WhyChooseSection() {
     <>
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
-              Why Choose Sure Lock & Key Birmingham?
-            </h2>
-            <div className="text-lg text-muted-foreground max-w-4xl mx-auto text-pretty space-y-4">
-              <p className="text-center">
-                When something goes wrong with your locks, car ignition, or key fob, it's not just
-                frustrating—it can throw off your whole day. That's where Sure Lock & Key Birmingham
-                comes in. We're a family-owned business with decades of hands-on experience,
-                offering everything from lockout services to car key programming, repairs, and
-                replacements. Whether you need an emergency locksmith, help from a skilled
-                automotive locksmith, or fast, accurate car key replacement, you can count on us to
-                show up, solve the issue, and do the job right. We're proud to be the local team
-                Birmingham trusts for dependable locksmith services.
-              </p>
-              <p className="font-medium text-center">
-                Here's why so many homeowners and businesses in Birmingham choose us:
-              </p>
+          {/* Top section with text on left, image on right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+            <div className="text-left">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Why Choose Sure Lock & Key Birmingham?
+              </h2>
+              <div className="text-lg text-muted-foreground max-w-2xl text-pretty space-y-4">
+                <p>
+                  When something goes wrong with your locks, car ignition, or key fob, it's not just
+                  frustrating—it can throw off your whole day. That's where Sure Lock & Key
+                  Birmingham comes in. We're a family-owned business with decades of hands-on
+                  experience, offering everything from lockout services to car key programming,
+                  repairs, and replacements.
+                </p>
+                <p>
+                  Whether you need an emergency locksmith, help from a skilled automotive locksmith,
+                  or fast, accurate car key replacement, you can count on us to show up, solve the
+                  issue, and do the job right. We're proud to be the local team Birmingham trusts
+                  for dependable locksmith services.
+                </p>
+              </div>
+            </div>
+            <div>
+              <img
+                src="/main-page/2.jpg"
+                alt="The Sure Lock & Key Birmingham service van, fully equipped and ready for dispatch."
+                className="w-full h-auto rounded-xl shadow-2xl object-cover aspect-[4/3]"
+              />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, index) => (
-              <Card
-                key={index}
-                className="bg-primary text-white border-0 hover:shadow-lg transition-shadow">
-                <CardHeader className="text-center pb-4">
-                  <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
-                    <feature.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <CardTitle className="text-lg font-semibold text-white">
-                    {feature.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <CardDescription className="text-white/90 text-center">
-                    {feature.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
+          {/* Bottom section with image on left, cards on right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="order-last lg:order-first">
+              <img
+                src="/main-page/1.webp"
+                alt="A Sure Lock & Key technician professionally installing a new lock on a residential door."
+                className="w-full h-auto rounded-xl shadow-2xl object-cover aspect-square"
+              />
+            </div>
+            <div>
+              <p className="text-lg font-semibold text-foreground mb-6">
+                Here's why so many homeowners and businesses in Birmingham choose us:
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {features.map((feature, index) => (
+                  <Card
+                    key={index}
+                    className="bg-primary text-white border-0 hover:shadow-lg transition-shadow">
+                    <CardHeader className="text-center pb-4">
+                      <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
+                        <feature.icon className="h-8 w-8 text-white" />
+                      </div>
+                      <CardTitle className="text-lg font-semibold text-white">
+                        {feature.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <CardDescription className="text-white/90 text-center">
+                        {feature.description}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
-
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -132,29 +156,36 @@ export function WhyChooseSection() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left column - Service vehicle image */}
-            <div className="order-2 lg:order-1">
-              <img
-                src="/images/facility-exterior.jpg"
-                alt="Sure Lock & Key Birmingham professional locksmith facility with service bays"
-                className="w-full rounded-lg shadow-lg h-96"
-              />
+
+            {/* Google Maps */}
+            <div className="bg-card border border-border rounded-lg overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.8234567890123!2d-86.7234567!3d33.5234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s404%20Black%20Creek%20Rd%20%23122%2C%20Birmingham%2C%20AL%2035217!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Sure Lock & Key Birmingham Location"></iframe>
             </div>
 
-            {/* Right column - Business hours */}
-            <div className="order-1 lg:order-2">
+            {/* Hours */}
+            <div className="flex flex-col justify-center">
+              <h3 className="text-xl font-semibold text-foreground mb-6">Hours:</h3>
               <div className="space-y-4">
                 {[
-                  'Monday 9 AM – 5 PM',
-                  'Tuesday 9 AM – 5 PM',
-                  'Wednesday 9 AM – 5 PM',
-                  'Thursday 9 AM – 5 PM',
-                  'Friday 9 AM – 5 PM',
-                  'Saturday 9 AM – 5 PM',
-                  'Sunday 9 AM – 5 PM',
+                  'Monday: 9 AM – 5 PM',
+                  'Tuesday: 9 AM – 5 PM',
+                  'Wednesday: 9 AM – 5 PM',
+                  'Thursday: 9 AM – 5 PM',
+                  'Friday: 9 AM – 5 PM',
+                  'Saturday: 9 AM – 5 PM',
+                  'Sunday: 9 AM – 5 PM',
                 ].map((hours, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <Diamond className="h-4 w-4 text-primary fill-primary" />
-                    <span className="text-lg text-muted-foreground">{hours}</span>
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-blue-500 transform rotate-45"></div>
+                    <p className="text-lg text-muted-foreground">{hours}</p>
                   </div>
                 ))}
               </div>

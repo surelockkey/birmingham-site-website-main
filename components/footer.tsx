@@ -61,10 +61,14 @@ export function Footer() {
               decades of hands-on experience, offering everything from lockout services to car key
               programming.
             </p>
-            <div className="flex items-center space-x-2 mb-2">
+            <a href="tel:2059520215" className="flex items-center space-x-2 mb-2">
               <Phone className="h-4 w-4" />
               <span className="text-sm font-semibold">(205) 952-0215</span>
-            </div>
+            </a>
+            <a href="tel:2056671027" className="flex items-center space-x-2 mb-2">
+              <Phone className="h-4 w-4" />
+              <span className="text-sm font-semibold">(205) 667-1027</span>
+            </a>
             <div className="flex items-center space-x-2">
               <Clock className="h-4 w-4" />
               <span className="text-sm opacity-80">Open 7 Days: 9:00 AM - 5:00 PM</span>
