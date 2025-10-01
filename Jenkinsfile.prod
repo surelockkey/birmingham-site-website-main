@@ -3,7 +3,7 @@
 pipeline {
     agent {
         node {
-            label 'birmingham'
+            label 'slk-global'
         }
     }
     options {
