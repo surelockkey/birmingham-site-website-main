@@ -1,0 +1,25 @@
+#!/usr/bin/env groovy
+
+pipeline {
+    agent {
+        node {
+            label 'birmingham'
+        }
+    }
+    options {
+        ansiColor('xterm')
+        buildDiscarder(logRotator(numToKeepStr: '3', artifactNumToKeepStr: '3'))
+        disableConcurrentBuilds()
+    }
+    stages {
+        stage('Build and Run PROD') {
+            steps {
+                sh '''
+                    sudo docker compose build --no-cache prod
+                    sudo docker compose up -d
+                    sudo docker system prune -f
+                '''
+            }
+        }
+    }
+}

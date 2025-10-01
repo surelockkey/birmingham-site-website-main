@@ -1,0 +1,12 @@
+version: "3.3"
+
+services:
+  prod:
+    ports:
+      - 3003:3000
+    command: npm run start
+    build:
+      context: .
+      target: production
+      dockerfile: Dockerfile
+    restart: unless-stopped
