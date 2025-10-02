@@ -194,7 +194,7 @@ export default function BirminghamLocationPage() {
         <section className="py-16 bg-muted/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Partners</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">We Serve</h2>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center">
