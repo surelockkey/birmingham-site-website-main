@@ -101,8 +101,10 @@ export function Header() {
           <div className="hidden md:flex items-center space-x-4">
             <div className="text-right"></div>
             <Button className="bg-accent hover:bg-accent/90 text-accent-foreground">
-              <Phone className="h-4 w-4 mr-2" />
-              Call Now
+              <a href="tel:2059520215" className="flex">
+                <Phone className="h-4 w-4 mr-2" />
+                Call Now
+              </a>
             </Button>
           </div>
 
@@ -151,8 +153,10 @@ export function Header() {
                 </a>
                 <div className="text-xs text-muted-foreground">Available 24/7</div>
                 <Button className="w-full mt-2 bg-accent hover:bg-accent/90 text-accent-foreground">
-                  <Phone className="h-4 w-4 mr-2" />
-                  Call Now
+                  <a href="tel:2059520215" className="flex">
+                    <Phone className="h-4 w-4 mr-2" />
+                    Call Now
+                  </a>
                 </Button>
               </div>
             </div>
