@@ -1,46 +1,47 @@
-"use client"
+'use client';
 
-import { useState } from "react"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Phone, Mail, ChevronDown, ChevronUp } from "lucide-react"
+import { Footer } from '@/components/footer';
+import { Header } from '@/components/header';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { ChevronDown, ChevronUp, Mail, Phone } from 'lucide-react';
+import { useState } from 'react';
 
 export default function ContactPage() {
-  const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
-    setExpandedFaq(expandedFaq === index ? null : index)
-  }
+    setExpandedFaq(expandedFaq === index ? null : index);
+  };
 
   const faqs = [
     {
-      question: "How quickly can a technician get to me in Birmingham?",
+      question: 'How quickly can a technician get to me in Birmingham?',
       answer:
         "We dispatch the nearest tech right away. Arrival time depends on traffic and distance, and we'll keep you updated until we arrive.",
     },
     {
-      question: "Do you handle emergency calls?",
+      question: 'Do you handle emergency calls?',
       answer:
-        "Yes. We handle emergency locksmith calls for homes, businesses, and vehicles. Call to check current availability.",
+        'Yes. We handle emergency locksmith calls for homes, businesses, and vehicles. Call to check current availability.',
     },
     {
-      question: "Can you make a car key without the original?",
-      answer: "In most cases, yes. We handle on-site car key replacement and programming for many makes and models.",
+      question: 'Can you make a car key without the original?',
+      answer:
+        'In most cases, yes. We handle on-site car key replacement and programming for many makes and models.',
     },
     {
-      question: "Will my door or lock be damaged during a lockout?",
+      question: 'Will my door or lock be damaged during a lockout?',
       answer:
         "We use non-destructive methods whenever possible. If drilling or replacement is the best option, we'll explain it first and get your approval.",
     },
     {
-      question: "What info should I include when I contact you?",
+      question: 'What info should I include when I contact you?',
       answer:
-        "Your location, what happened (home lockout, broken key, keypad trouble), the lock or vehicle make if you know it, and your preferred contact method and time.",
+        'Your location, what happened (home lockout, broken key, keypad trouble), the lock or vehicle make if you know it, and your preferred contact method and time.',
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen">
@@ -49,8 +50,7 @@ export default function ContactPage() {
         {/* Hero Section */}
         <section
           className="py-20 relative bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url(/images/contact-hero-background.jpg)" }}
-        >
+          style={{ backgroundImage: 'url(/images/contact-hero-background.jpg)' }}>
           <div className="absolute inset-0 bg-black/50"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-4xl mx-auto">
@@ -58,8 +58,9 @@ export default function ContactPage() {
                 Contact Sure Lock & Key Team in Birmingham, AL
               </h1>
               <p className="text-xl text-white/90">
-                Friendly, local techs with quick response. Full-service Birmingham locksmith for residential,
-                commercial, and automotive needs. Call, text, or send the form for fast help.
+                Friendly, local techs with quick response. Full-service Birmingham locksmith for
+                residential, commercial, and automotive needs. Call, text, or send the form for fast
+                help.
               </p>
             </div>
           </div>
@@ -71,11 +72,15 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Form */}
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Short Form. Quick Scheduling</h2>
+                <h2 className="text-3xl font-bold text-foreground mb-4">
+                  Short Form. Quick Scheduling
+                </h2>
                 <form className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-foreground mb-2">
                         Name *
                       </label>
                       <Input
@@ -87,7 +92,9 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                      <label
+                        htmlFor="phone"
+                        className="block text-sm font-medium text-foreground mb-2">
                         Phone Number *
                       </label>
                       <Input
@@ -101,7 +108,9 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-foreground mb-2">
                       Email Address
                     </label>
                     <Input
@@ -113,7 +122,9 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="service" className="block text-sm font-medium text-foreground mb-2">
+                    <label
+                      htmlFor="service"
+                      className="block text-sm font-medium text-foreground mb-2">
                       Service Needed
                     </label>
                     <Input
@@ -125,7 +136,9 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="location" className="block text-sm font-medium text-foreground mb-2">
+                    <label
+                      htmlFor="location"
+                      className="block text-sm font-medium text-foreground mb-2">
                       Location/Address
                     </label>
                     <Input
@@ -137,7 +150,9 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-foreground mb-2">
                       Additional Details
                     </label>
                     <Textarea
@@ -150,8 +165,7 @@ export default function ContactPage() {
 
                   <Button
                     type="submit"
-                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-base h-11"
-                  >
+                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-base h-11">
                     Request Service
                   </Button>
                 </form>
@@ -165,7 +179,9 @@ export default function ContactPage() {
                   <div className="flex items-center space-x-4 p-6 bg-primary text-white rounded-lg">
                     <Phone className="h-8 w-8" />
                     <div>
-                      <div className="font-bold text-lg">(205) 952-0215</div>
+                      <a href="tel:2059520215" className="font-bold text-lg">
+                        (205) 952-0215
+                      </a>
                       <div className="text-sm opacity-90">Available 24/7 for emergencies</div>
                     </div>
                   </div>
@@ -173,8 +189,12 @@ export default function ContactPage() {
                   <div className="flex items-center space-x-4 p-6 bg-muted rounded-lg">
                     <Mail className="h-8 w-8 text-primary" />
                     <div>
-                      <div className="text-lg font-semibold text-foreground">albirmingham@surelockkey.com</div>
-                      <div className="text-sm text-muted-foreground">Email us for non-urgent requests</div>
+                      <div className="text-lg font-semibold text-foreground">
+                        albirmingham@surelockkey.com
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        Email us for non-urgent requests
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -196,8 +216,7 @@ export default function ContactPage() {
                   <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
                     <button
                       onClick={() => toggleFaq(index)}
-                      className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
-                    >
+                      className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
                       <h3 className="font-medium text-foreground pr-4">{faq.question}</h3>
                       {expandedFaq === index ? (
                         <ChevronUp className="h-5 w-5 text-primary flex-shrink-0" />
@@ -220,5 +239,5 @@ export default function ContactPage() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }

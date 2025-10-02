@@ -226,9 +226,9 @@ export default function BirminghamLocationPage() {
                 <p className="text-lg text-muted-foreground">
                   <strong>Address:</strong> 404 Black Creek Rd #122, Birmingham, AL 35217
                 </p>
-                <p className="text-lg text-muted-foreground">
+                <a href="tel:2059520215" className="text-lg text-muted-foreground">
                   <strong>Phone:</strong> (205) 952-0215
-                </p>
+                </a>
                 <p className="text-lg text-muted-foreground">
                   <strong>Email:</strong> albirmingham@surelockkey.com
                 </p>

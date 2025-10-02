@@ -31,8 +31,10 @@ export function HeroSection() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-              <Phone className="h-5 w-5 mr-2" />
-              (205) 952-0215 — Reach out anytime
+              <a href="tel:2059520215" className="flex">
+                <Phone className="h-5 w-5 mr-2" />
+                (205) 952-0215 — Reach out anytime
+              </a>
             </Button>
           </div>
         </div>

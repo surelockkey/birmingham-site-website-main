@@ -1,44 +1,44 @@
-"use client"
+'use client';
 
-import { useState, useRef, useEffect } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Menu, X, Phone, ChevronDown } from "lucide-react"
-import Image from "next/image"
+import { Button } from '@/components/ui/button';
+import { ChevronDown, Menu, Phone, X } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isServicesOpen, setIsServicesOpen] = useState(false)
-  const servicesRef = useRef<HTMLDivElement>(null)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
 
   const navigation = [
-    { name: "Home", href: "/" },
-    { name: "Gallery", href: "/gallery" },
-    { name: "Contact Us", href: "/contact" },
-    { name: "Locations", href: "/locations" }, // Changed from "Location" to "Locations" and updated href to "/locations"
-  ]
+    { name: 'Home', href: '/' },
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Contact Us', href: '/contact' },
+    { name: 'Locations', href: '/locations' }, // Changed from "Location" to "Locations" and updated href to "/locations"
+  ];
 
   const services = [
-    { name: "Lock Installation & Replacement", href: "/services/lock-installation" },
-    { name: "Lock Repair & Maintenance", href: "/services/lock-repair" },
-    { name: "Automotive Locksmith Services", href: "/services/automotive" },
-    { name: "Emergency Locksmith Services", href: "/services/emergency" },
-    { name: "Car Key Replacement", href: "/services/car-key-replacement" },
-    { name: "Car Key Programming", href: "/services/car-key-programming" },
-  ]
+    { name: 'Lock Installation & Replacement', href: '/services/lock-installation' },
+    { name: 'Lock Repair & Maintenance', href: '/services/lock-repair' },
+    { name: 'Automotive Locksmith Services', href: '/services/automotive' },
+    { name: 'Emergency Locksmith Services', href: '/services/emergency' },
+    { name: 'Car Key Replacement', href: '/services/car-key-replacement' },
+    { name: 'Car Key Programming', href: '/services/car-key-programming' },
+  ];
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
-        setIsServicesOpen(false)
+        setIsServicesOpen(false);
       }
     }
 
-    document.addEventListener("mousedown", handleClickOutside)
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [])
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <header className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b border-border">
@@ -62,8 +62,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-              >
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors">
                 {item.name}
               </Link>
             ))}
@@ -71,10 +70,13 @@ export function Header() {
             <div className="relative" ref={servicesRef}>
               <button
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
-                className="flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors"
-              >
+                className="flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors">
                 Services
-                <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
+                <ChevronDown
+                  className={`ml-1 h-4 w-4 transition-transform ${
+                    isServicesOpen ? 'rotate-180' : ''
+                  }`}
+                />
               </button>
 
               {isServicesOpen && (
@@ -85,8 +87,7 @@ export function Header() {
                         key={service.name}
                         href={service.href}
                         className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
-                        onClick={() => setIsServicesOpen(false)}
-                      >
+                        onClick={() => setIsServicesOpen(false)}>
                         {service.name}
                       </Link>
                     ))}
@@ -107,7 +108,11 @@ export function Header() {
 
           {/* Mobile menu button */}
           <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X className="h-6 w-6 text-foreground" /> : <Menu className="h-6 w-6 text-foreground" />}
+            {isMenuOpen ? (
+              <X className="h-6 w-6 text-foreground" />
+            ) : (
+              <Menu className="h-6 w-6 text-foreground" />
+            )}
           </button>
         </div>
 
@@ -120,8 +125,7 @@ export function Header() {
                   key={item.name}
                   href={item.href}
                   className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
+                  onClick={() => setIsMenuOpen(false)}>
                   {item.name}
                 </Link>
               ))}
@@ -134,8 +138,7 @@ export function Header() {
                       key={service.name}
                       href={service.href}
                       className="block py-1 text-sm text-muted-foreground hover:text-primary transition-colors"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
+                      onClick={() => setIsMenuOpen(false)}>
                       {service.name}
                     </Link>
                   ))}
@@ -143,7 +146,9 @@ export function Header() {
               </div>
 
               <div className="px-3 py-2 border-t border-border mt-4">
-                <div className="text-sm font-semibold text-foreground">(205) 952-0215</div>
+                <a href="tel:2059520215" className="text-sm font-semibold text-foreground">
+                  (205) 952-0215
+                </a>
                 <div className="text-xs text-muted-foreground">Available 24/7</div>
                 <Button className="w-full mt-2 bg-accent hover:bg-accent/90 text-accent-foreground">
                   <Phone className="h-4 w-4 mr-2" />
@@ -155,5 +160,5 @@ export function Header() {
         )}
       </div>
     </header>
-  )
+  );
 }

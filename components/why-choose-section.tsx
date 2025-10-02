@@ -203,9 +203,9 @@ export function WhyChooseSection() {
                 Schedule Trusted Locksmith Service in Birmingham
               </h2>
               <p className="text-lg mb-8 text-white/90">
-                Need help fast? Call (205) 952-0215 or fill out the form below. Our team is
-                available 7 days a week to answer your questions and schedule service at a time that
-                works for you.
+                Need help fast? Call <a href="tel:2059520215">(205) 952-0215</a> or fill out the
+                form below. Our team is available 7 days a week to answer your questions and
+                schedule service at a time that works for you.
               </p>
 
               <form className="space-y-4">

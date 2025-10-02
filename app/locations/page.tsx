@@ -1,9 +1,9 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import Image from "next/image"
-import { MapPin } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import { Footer } from '@/components/footer';
+import { Header } from '@/components/header';
+import { Button } from '@/components/ui/button';
+import { MapPin } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function LocationsPage() {
   return (
@@ -13,8 +13,7 @@ export default function LocationsPage() {
         {/* Hero Section */}
         <section
           className="py-20 relative bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url(/images/automotive-locksmith-work.jpg)" }}
-        >
+          style={{ backgroundImage: 'url(/images/automotive-locksmith-work.jpg)' }}>
           <div className="absolute inset-0 bg-black/60"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-4xl mx-auto">
@@ -55,13 +54,13 @@ export default function LocationsPage() {
                       <h3 className="text-xl font-semibold text-foreground">Birmingham, AL</h3>
                     </div>
                     <p className="text-muted-foreground mb-4">
-                      Serving Birmingham and surrounding areas with professional locksmith services for residential,
-                      commercial, and automotive needs.
+                      Serving Birmingham and surrounding areas with professional locksmith services
+                      for residential, commercial, and automotive needs.
                     </p>
                     <div className="space-y-2 text-sm text-muted-foreground mb-6">
-                      <p>
+                      <a href="tel:2059520215">
                         <strong>Phone:</strong> (205) 952-0215
-                      </p>
+                      </a>
                     </div>
                     <Button variant="outline" className="w-full md:w-auto bg-transparent" asChild>
                       <Link href="/locations/birmingham">View more</Link>
@@ -75,5 +74,5 @@ export default function LocationsPage() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }
